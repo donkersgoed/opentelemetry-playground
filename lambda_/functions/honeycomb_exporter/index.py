@@ -2,9 +2,9 @@
 import base64
 import os
 from copy import deepcopy
-import dateutil.parser
 import json
 import zlib
+import dateutil.parser
 
 # Related third party imports
 import boto3

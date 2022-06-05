@@ -1,7 +1,6 @@
 """Module for the main OpentelemetryPlayground Stack."""
 
 # Third party imports
-from turtle import st
 from aws_cdk import (
     Duration,
     Fn,
@@ -26,24 +25,6 @@ class OpentelemetryPlaygroundStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         """Construct a new OpentelemetryPlaygroundStack."""
         super().__init__(scope, construct_id, **kwargs)
-
-        # API -> Lambda -> DDB?
-        # Wide and shallow span
-        # - Lambda-wide
-        # Convert image to thumbnail?
-        # S3 /uploads
-        #    /thumbnails
-
-        # Root span: source image, source size, source extension / mimetype
-
-        # Multiple records in one request / event:
-        # - Root span for the function, waterfall per duration
-        # - Root span per record, attribute setting, link to orphaned root span
-
-        # What questions do we want to answer?
-        # - How long did the function run?
-        # - Did it encounter errors?
-        # - How long did each record take?
 
         stream = kds.Stream(scope=self, id="LoggingStream")
 
